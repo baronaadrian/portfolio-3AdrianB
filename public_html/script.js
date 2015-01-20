@@ -6,28 +6,52 @@
 
 
 $("document") .ready(function(){
-    // $(' .yeah') .css('background-color' , 'yellow');
+    $('.yeah').css('backgroound-color' , 'yellow');
     
+    $('#superHumans').accordion({header: "h3"});
+    // $('#superHumans').css('width', '400px');
+       
     // $(' .2') .css({'visibility' : 'hidden' , 'position' : 'absolute'});
    
     // $('div:last p:nth-child(3)').css('backgroound-color', 'pink');
  
-    $("h1").bind('mouseover', mouseOverMe).bind('mouseout', moouseOutMe);
-
-    $('div').bind('mouseover', mouseOverMe());
+    // $("h1").bind('mouseover', mouseOverMe).bind('mouseout', mouseOutMe);
+         
+    // $('h1').bind('click', mouseClick)
     
-    $('h1').bind('click', mouseClick)
-});
+    // $('#replaceWText').bind('click, replaceWText);
+    
+    // $('#randPara').bind('click' , addAPara);
+    
+    // $('#removePara').bind('click' , removeAPara);
+    
+    $('#show').css('visibility' , 'hidden');
+       
+    $('#hide').bind('click', hideThePage);
+    
+    $('#show').bind('click', showThePage);
+    
+    });
 
-function mouseOverMe(){
-    $("p").html("This is easy");
+function hideThePage(){
+    $('#show').css('visibility', 'visible');
+    $('div').hide('slide', {}, 2500);
+    $('#show').show('fold', {}, 2500);
 }
 
-function mouseOverMe(){
-    $("h1").html("nick is cool");
+function showThePage(){
+    $('div').show('fold', {}, 2500); 
+    $('#show').hide('puff', {}, 2500);
+}
+function removeAPara(){
+    $('#randPara p:last').remove();
 }
 
-function mouseOverMe(){
+function addAPara(){
+    $('#randPara').append('<p>ADDED</p>');
+}
+
+function replaceWText(){
     
-    $("p").html('ADRIAN');
+    $('#replaceWText').text('Replaced!');
 }
